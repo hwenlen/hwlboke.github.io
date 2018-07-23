@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ckplayer学习笔记 | will的前端技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ckplayer是一款用于网页上播放视频的软件，优先使用html5播放器播放，在不支持html5的浏览器或不支持特定视频格式（比如：m3u8,rtmp）的浏览上使用flashplayer，所以能很好的兼容IE8，值得注意的是：此款播放器需要放在网络环境里方可正常使用，直接打开无法使用，所以本地环境可能看不了，下面讲讲ckplayer的基本使用 。 播放器调用方式标准调用方式该调用方式为标准调用方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ckplayer学习笔记">
+<meta property="og:url" content="https://hwenlen.github.io/hwlboke.github.io/2018/07/23/ckplayer学习笔记/index.html">
+<meta property="og:site_name" content="will的前端技术博客">
+<meta property="og:description" content="ckplayer是一款用于网页上播放视频的软件，优先使用html5播放器播放，在不支持html5的浏览器或不支持特定视频格式（比如：m3u8,rtmp）的浏览上使用flashplayer，所以能很好的兼容IE8，值得注意的是：此款播放器需要放在网络环境里方可正常使用，直接打开无法使用，所以本地环境可能看不了，下面讲讲ckplayer的基本使用 。 播放器调用方式标准调用方式该调用方式为标准调用方式">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-23T07:13:57.756Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ckplayer学习笔记">
+<meta name="twitter:description" content="ckplayer是一款用于网页上播放视频的软件，优先使用html5播放器播放，在不支持html5的浏览器或不支持特定视频格式（比如：m3u8,rtmp）的浏览上使用flashplayer，所以能很好的兼容IE8，值得注意的是：此款播放器需要放在网络环境里方可正常使用，直接打开无法使用，所以本地环境可能看不了，下面讲讲ckplayer的基本使用 。 播放器调用方式标准调用方式该调用方式为标准调用方式">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/hwlboke.github.io/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/hwlboke.github.io/" id="logo">will的前端技术博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/hwlboke.github.io/">主页</a>
+        
+          <a class="main-nav-link" href="/hwlboke.github.io/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hwenlen.github.io/hwlboke.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ckplayer学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hwlboke.github.io/2018/07/23/ckplayer学习笔记/" class="article-date">
+  <time datetime="2018-07-23T02:11:11.964Z" itemprop="datePublished">2018-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ckplayer学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.ckplayer.com/" target="_blank" rel="noopener">ckplayer</a>是一款用于网页上播放视频的软件，优先使用html5播放器播放，在不支持html5的浏览器或不支持特定视频格式（比如：m3u8,rtmp）的浏览上使用flashplayer，所以能很好的兼容IE8，值得注意的是：此款播放器需要放在网络环境里方可正常使用，直接打开无法使用，所以本地环境可能看不了，下面讲讲ckplayer的基本使用 。</p>
+<h1 id="播放器调用方式"><a href="#播放器调用方式" class="headerlink" title="播放器调用方式"></a>播放器调用方式</h1><h2 id="标准调用方式"><a href="#标准调用方式" class="headerlink" title="标准调用方式"></a>标准调用方式</h2><p>该调用方式为标准调用方式，如果是普通的.mp4视频，并且没有广告设置的话，推荐使用这种调用方式。兼容PC端和移动端，兼容大部分的平台（浏览器）。下载文件的时候记得把swf,xml等文件一起放进文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"ckplayer/ckplayer.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;div id=<span class="string">"video"</span> style=<span class="string">"width:600px;height:400px;"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  var videoObject = &#123;</span><br><span class="line">    container: <span class="string">'#video'</span>, //“<span class="comment">#”代表容器的ID，“.”或“”代表容器的class</span></span><br><span class="line">    variable: <span class="string">'player'</span>, //该属性必需设置，值等于下面的new chplayer()的对象</span><br><span class="line">    flashplayer:<span class="literal">false</span>, //如果强制使用flashplayer则设置成<span class="literal">true</span></span><br><span class="line">    video:<span class="string">'examples01.mp4'</span> //视频地址</span><br><span class="line">  &#125;;</span><br><span class="line">  var player=new ckplayer(videoObject);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="简单调用ckplayer-swf"><a href="#简单调用ckplayer-swf" class="headerlink" title="简单调用ckplayer.swf"></a>简单调用ckplayer.swf</h2><p>该调用方式跟调用其它swf文件方式一样。主要用html代码中的embed。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;embed src=<span class="string">"http://www.ckplayer.com/ckplayer/x/ckplayer.swf"</span> flashvars=<span class="string">"video=视频地址"</span>  quality=<span class="string">"high"</span> width=<span class="string">"480"</span> height=<span class="string">"400"</span> align=<span class="string">"middle"</span> allowScriptAccess=<span class="string">"always"</span> allowFullscreen=<span class="string">"true"</span> <span class="built_in">type</span>=<span class="string">"application/x-shockwave-flash"</span>&gt;&lt;/embed&gt;</span><br><span class="line"></span><br><span class="line">代码说明：</span><br><span class="line"></span><br><span class="line">embed：是标准的html代码。用来加载插件。</span><br><span class="line">src：插件地址，这里则指播放器地址</span><br><span class="line">flashvars：传递到播放器里的各个参数，比如视频地址，是否默认播放等</span><br><span class="line">width：播放器的宽</span><br><span class="line">height：播放器的高，不支持百分比</span><br></pre></td></tr></table></figure></p>
+<h2 id="视频地址形式"><a href="#视频地址形式" class="headerlink" title="视频地址形式"></a>视频地址形式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var videoObject = &#123;</span><br><span class="line">  container: <span class="string">'#video'</span>,//“<span class="comment">#”代表容器的ID，“.”或“”代表容器的class</span></span><br><span class="line">  variable: <span class="string">'player'</span>,//该属性必需设置，值等于下面的new chplayer()的对象</span><br><span class="line">  flashplayer:<span class="literal">false</span>,//如果强制使用flashplayer则设置成<span class="literal">true</span></span><br><span class="line">  video:<span class="string">''</span>//视频地址</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 普通视频地址</span><br><span class="line">video:<span class="string">'examples01.mp4'</span> 值是一个视频地址，这样调用就可以了</span><br><span class="line"></span><br><span class="line">// 指定视频格式</span><br><span class="line">video:&#123;</span><br><span class="line">  file:<span class="string">'examples01.mp4'</span>,//视频地址</span><br><span class="line">  <span class="built_in">type</span>:<span class="string">'video/mp4'</span>    //值可以是video/mp4，video/m3u8，video/ogg，video/webm</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 页面地址调用形式</span><br><span class="line">video:<span class="string">'wetsite:存放视频地址的一个页面网址'</span>  //标准格式必需用website:开头，播放器检测到video的值开头8个字 符为website:则会去请求该地址调用</span><br><span class="line"></span><br><span class="line">// 支持清晰度-兼容</span><br><span class="line">// 需要注意的就是视频地址数组里最后一个值，在下面示例中是第三个为：10，其它的为0，这里是权重的意思。即默认先播放该视频。</span><br><span class="line">video: [</span><br><span class="line">  [<span class="string">'01.mp4'</span>, <span class="string">'video/mp4'</span>, <span class="string">'中文标清'</span>, 0],</span><br><span class="line">  [<span class="string">'02.mp4'</span>, <span class="string">'video/mp4'</span>, <span class="string">'中文高清'</span>, 0],</span><br><span class="line">  [<span class="string">'03.mp4'</span>, <span class="string">'video/mp4'</span>, <span class="string">'英文高清'</span>, 10],</span><br><span class="line">  [<span class="string">'04.mp4'</span>, <span class="string">'video/mp4'</span>, <span class="string">'英文超清'</span>, 0],</span><br><span class="line">]</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="调用播放器时的常用属性列表"><a href="#调用播放器时的常用属性列表" class="headerlink" title="调用播放器时的常用属性列表"></a>调用播放器时的常用属性列表</h2><h3 id="container-variable-video是必需的属性，其他的都是非必需的"><a href="#container-variable-video是必需的属性，其他的都是非必需的" class="headerlink" title="container, variable, video是必需的属性，其他的都是非必需的;"></a>container, variable, video是必需的属性，其他的都是非必需的;</h3><h3 id="playerID-播放器ID，不能以数字开头"><a href="#playerID-播放器ID，不能以数字开头" class="headerlink" title="playerID: 播放器ID，不能以数字开头"></a>playerID: 播放器ID，不能以数字开头</h3><p>当同一个页面调用多个播放器时可以使用，如果使用则在监听函数时需要在接受监听的函数里结尾添加一个对象属性来区分是哪个播放器的动作，比如监听时间：<br>player.addListener(‘time’, timeHandler);<br>没有定义playerID时，接受监听的函数为：function timeHandler(time){}<br>定义了playerID时，接受监听的函数为：function timeHandler(time,playerObject){}</p>
+<h3 id="autoplay-是否自动播放"><a href="#autoplay-是否自动播放" class="headerlink" title="autoplay: 是否自动播放"></a>autoplay: 是否自动播放</h3><p>false=默认暂停，true=默认播放，该属性还涉及到默认是否加载视频，可以在ckplayer.js或ckplayer.xml里找到节点config的autoLoad节点设置</p>
+<h3 id="loop-播放结束后是否循环播放"><a href="#loop-播放结束后是否循环播放" class="headerlink" title="loop:　播放结束后是否循环播放"></a>loop:　播放结束后是否循环播放</h3><p>false=播放结束后暂停，true=播放结束后重新播放</p>
+<h3 id="volume-初始音量"><a href="#volume-初始音量" class="headerlink" title="volume:　初始音量"></a>volume:　初始音量</h3><p>初始化播放器的音量，如果静音，则设置成0，数值为0-1之间的小数</p>
+<h3 id="poster-封面图片"><a href="#poster-封面图片" class="headerlink" title="poster: 封面图片"></a>poster: 封面图片</h3><h3 id="duration-显示总时间"><a href="#duration-显示总时间" class="headerlink" title="duration: 显示总时间"></a>duration: 显示总时间</h3><p>视频在默认不加载的情况下显示总时间</p>
+<h3 id="flashplayer-是否强制使用flashplayer播放"><a href="#flashplayer-是否强制使用flashplayer播放" class="headerlink" title="flashplayer: 是否强制使用flashplayer播放"></a>flashplayer: 是否强制使用flashplayer播放</h3><p>false=播放器自动判断，优先使用html5播放器，true=仅使用flashplayer播放</p>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="删除logo-ckplayer"><a href="#删除logo-ckplayer" class="headerlink" title="删除logo-ckplayer"></a>删除logo-ckplayer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">在ckplayer.js中找到如下代码</span><br><span class="line">logo: &#123;</span><br><span class="line">  file: <span class="string">'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAAUCAYAAAD4BKGuAAAABGdBTUEA...'</span>,</span><br><span class="line">  align: <span class="string">'right'</span>,</span><br><span class="line">  vAlign: <span class="string">'top'</span>,</span><br><span class="line">  offsetX: -100,</span><br><span class="line">  offsetY: 10</span><br><span class="line">&#125;,</span><br><span class="line">修改为</span><br><span class="line">logo: null,</span><br><span class="line"></span><br><span class="line">在ckplayer.xml里找到</span><br><span class="line">&lt;logo&gt;</span><br><span class="line">  &lt;file&gt;data:image/png;base64,iVBORw0KGgoAAA..&lt;/file&gt;</span><br><span class="line">  &lt;align&gt;right&lt;/align&gt;&lt;!--水平对齐方式：left,center,right--&gt;</span><br><span class="line">  &lt;vAlign&gt;top&lt;/vAlign&gt;&lt;!--垂直对齐方式：top,middle,bottom--&gt;</span><br><span class="line">  &lt;offsetX&gt;-100&lt;/offsetX&gt;&lt;!--水平偏移量，单位：像素--&gt;</span><br><span class="line">  &lt;offsetY&gt;10&lt;/offsetY&gt;&lt;!--垂直偏移量，单位：像素--&gt;</span><br><span class="line">&lt;/logo&gt;</span><br><span class="line">修改为</span><br><span class="line">&lt;logo&gt;null&lt;/logo&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="修改loading"><a href="#修改loading" class="headerlink" title="修改loading"></a>修改loading</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">在ckplayer.js中找到如下代码</span><br><span class="line">loading: &#123;</span><br><span class="line">  file: <span class="string">'data:image/png;base64,Q1dTCrUjAAB4nKWZBzRc/...'</span>,</span><br><span class="line">  align: <span class="string">'middle'</span>,</span><br><span class="line">  vAlign: <span class="string">'top'</span>,</span><br><span class="line">  offsetX: -100,</span><br><span class="line">  offsetY: -40</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">在ckplayer.xml里找到</span><br><span class="line">&lt;loading&gt;</span><br><span class="line">  &lt;file&gt;data:image/png;base64,Q1dTCrUjAAB4nKWZBzRc/..&lt;/file&gt;</span><br><span class="line">  &lt;align&gt;center&lt;/align&gt;&lt;!--水平对齐方式：left,center,right--&gt;</span><br><span class="line">  &lt;vAlign&gt;middle&lt;/vAlign&gt;&lt;!--垂直对齐方式：top,middle,bottom--&gt;</span><br><span class="line">  &lt;offsetX&gt;-100&lt;/offsetX&gt;&lt;!--水平偏移量，单位：像素--&gt;</span><br><span class="line">  &lt;offsetY&gt;-40&lt;/offsetY&gt;&lt;!--垂直偏移量，单位：像素--&gt;</span><br><span class="line">&lt;/loading&gt;</span><br><span class="line"></span><br><span class="line">在这两个文件中修改</span><br></pre></td></tr></table></figure>
+<h3 id="增加上一个视频下一个视频的功能"><a href="#增加上一个视频下一个视频的功能" class="headerlink" title="增加上一个视频下一个视频的功能"></a>增加上一个视频下一个视频的功能</h3><p>在html5环境中，上一个视频（上一页），下一个视频（下一页）的功能是自动添加的。即只要在调用初始化的videoObject对象里包含front,next这二个属性即可。<br>在flashplayer环境中，这个功能需要配置。详细的可以看style.xml文件，在该文件中搜索：previousPage，这里被注释掉的就是上一个视频和下一个视频这二个按钮</p>
+<p><a href="http://www.ckplayer.com/" target="_blank" rel="noopener">更多</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hwenlen.github.io/hwlboke.github.io/2018/07/23/ckplayer学习笔记/" data-id="cjjxxqx1x00025spirxic05lv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/hwlboke.github.io/2018/07/19/TweenMax学习笔记（2）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TweenMax学习笔记（2）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hwlboke.github.io/archives/2018/07/">七月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/hwlboke.github.io/2018/07/23/ckplayer学习笔记/">ckplayer学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/hwlboke.github.io/2018/07/19/TweenMax学习笔记（2）/">TweenMax学习笔记（2）</a>
+          </li>
+        
+          <li>
+            <a href="/hwlboke.github.io/2018/07/17/TweenMax学习笔记（1）/">TweenMax学习笔记（1）</a>
+          </li>
+        
+          <li>
+            <a href="/hwlboke.github.io/2018/07/13/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Will<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/hwlboke.github.io/" class="mobile-nav-link">主页</a>
+  
+    <a href="/hwlboke.github.io/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/hwlboke.github.io/fancybox/jquery.fancybox.css">
+  <script src="/hwlboke.github.io/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/hwlboke.github.io/js/script.js"></script>
+
+  </div>
+</body>
+</html>
