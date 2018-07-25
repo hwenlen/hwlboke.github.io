@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="will的前端技术博客">
 <meta property="og:description" content="ECMAScript 6（简称ES6）是于2015年6月正式发布的JavaScript语言的标准，正式名为ECMAScript 2015（ES2015）。它的目标是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。随着时间的推移，ES6被越来越多的使用，所以ES6的学习是非常必要的。 各大浏览器的最新版本，对 ES6 的支持可以查看kangax.github.io/e">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-24T11:34:27.176Z">
+<meta property="og:updated_time" content="2018-07-25T02:17:32.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6基础学习笔记">
 <meta name="twitter:description" content="ECMAScript 6（简称ES6）是于2015年6月正式发布的JavaScript语言的标准，正式名为ECMAScript 2015（ES2015）。它的目标是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。随着时间的推移，ES6被越来越多的使用，所以ES6的学习是非常必要的。 各大浏览器的最新版本，对 ES6 的支持可以查看kangax.github.io/e">
@@ -84,8 +84,8 @@
       
         <p>ECMAScript 6（简称ES6）是于2015年6月正式发布的JavaScript语言的标准，正式名为ECMAScript 2015（ES2015）。它的目标是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。随着时间的推移，ES6被越来越多的使用，所以ES6的学习是非常必要的。</p>
 <p>各大浏览器的最新版本，对 ES6 的支持可以查看kangax.github.io/es5-compat-table/es6/</p>
+<a id="more"></a> 
 <h2 id="Babel-转码器"><a href="#Babel-转码器" class="headerlink" title="Babel 转码器"></a>Babel 转码器</h2><p>Babel 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在现有环境执行。这意味着，你可以用 ES6 的方式编写程序，又不用担心现有环境是否支持。</p>
-<a id="more"></a>
 <h2 id="一、let命令"><a href="#一、let命令" class="headerlink" title="一、let命令"></a>一、let命令</h2><p>ES6 新增了let命令，用来声明变量。它的用法类似于var，但是和var又有所不同的不同。</p>
 <h3 id="1-只在let命令所在的代码块内有效"><a href="#1-只在let命令所在的代码块内有效" class="headerlink" title="1.只在let命令所在的代码块内有效"></a>1.只在let命令所在的代码块内有效</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="built_in">let</span> a = 10;</span><br><span class="line">  var b = 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(a) // a is not defined.</span><br><span class="line">console.log(b) // 1</span><br></pre></td></tr></table></figure>
 <h3 id="2-不存在变量提升"><a href="#2-不存在变量提升" class="headerlink" title="2.不存在变量提升"></a>2.不存在变量提升</h3><p>var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined。这种现象多多少少是有些奇怪的，按照一般的逻辑，变量应该在声明语句之后才可以使用。<br>为了纠正这种现象，let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// var 的情况</span><br><span class="line">console.log(foo); // 输出undefined</span><br><span class="line">var foo = 2;</span><br><span class="line"></span><br><span class="line">// <span class="built_in">let</span> 的情况</span><br><span class="line">console.log(bar); // 报错</span><br><span class="line"><span class="built_in">let</span> bar = 2;</span><br></pre></td></tr></table></figure></p>
@@ -101,7 +101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hwenlen.github.io/hwlboke.github.io/2018/07/24/ES6基础学习笔记/" data-id="cjjzmi8er000084pi9e22zilz" class="article-share-link">Share</a>
+      <a data-url="https://hwenlen.github.io/hwlboke.github.io/2018/07/24/ES6基础学习笔记/" data-id="cjk0ud1dm0001t0pibtv51bv0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -159,6 +159,10 @@
       <ul>
         
           <li>
+            <a href="/hwlboke.github.io/2018/07/24/svg-js学习（1）/">svg.js学习（1）</a>
+          </li>
+        
+          <li>
             <a href="/hwlboke.github.io/2018/07/24/hosts加速github访问速度/">hosts加速github访问速度</a>
           </li>
         
@@ -172,10 +176,6 @@
         
           <li>
             <a href="/hwlboke.github.io/2018/07/19/TweenMax学习笔记（2）/">TweenMax学习笔记（2）</a>
-          </li>
-        
-          <li>
-            <a href="/hwlboke.github.io/2018/07/17/TweenMax学习笔记（1）/">TweenMax学习笔记（1）</a>
           </li>
         
       </ul>

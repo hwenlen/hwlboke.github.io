@@ -1005,6 +1005,11 @@ a.article-title:hover {
   -ms-transition: color 0.2s;
   transition: color 0.2s;
   line-height: 1.6em;
+  display: block;
+  height: 22px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .archive-article-title:hover {
   color: #258fb8;
