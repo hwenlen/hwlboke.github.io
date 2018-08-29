@@ -5,17 +5,17 @@
   
   <title>svg.js学习（2） | will的前端技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是svg.js学习的第二篇 基础图形绘制整理矩形12345var draw = SVG(&apos;drawing&apos;).size(300, 300);var rect = draw.rect(100, 100);//设置radius圆角,指定rx，ry//rect.radius(30,3);rect.radius(&quot;50%&quot;); 圆形1234567var draw = SVG(&apos;drawing&apos;).siz">
+  <meta name="description" content="这是svg.js学习的第二篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="svg.js学习（2）">
 <meta property="og:url" content="https://hwenlen.github.io/hwlboke.github.io/2018/07/25/svg-js学习（2）/index.html">
 <meta property="og:site_name" content="will的前端技术博客">
-<meta property="og:description" content="这是svg.js学习的第二篇 基础图形绘制整理矩形12345var draw = SVG(&apos;drawing&apos;).size(300, 300);var rect = draw.rect(100, 100);//设置radius圆角,指定rx，ry//rect.radius(30,3);rect.radius(&quot;50%&quot;); 圆形1234567var draw = SVG(&apos;drawing&apos;).siz">
+<meta property="og:description" content="这是svg.js学习的第二篇">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-29T08:36:27.285Z">
+<meta property="og:updated_time" content="2018-08-29T09:00:56.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="svg.js学习（2）">
-<meta name="twitter:description" content="这是svg.js学习的第二篇 基础图形绘制整理矩形12345var draw = SVG(&apos;drawing&apos;).size(300, 300);var rect = draw.rect(100, 100);//设置radius圆角,指定rx，ry//rect.radius(30,3);rect.radius(&quot;50%&quot;); 圆形1234567var draw = SVG(&apos;drawing&apos;).siz">
+<meta name="twitter:description" content="这是svg.js学习的第二篇">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,7 +82,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是svg.js学习的第二篇</p>
+        <p>这是svg.js学习的第二篇<br><a id="more"></a> </p>
 <h2 id="基础图形绘制整理"><a href="#基础图形绘制整理" class="headerlink" title="基础图形绘制整理"></a>基础图形绘制整理</h2><h3 id="矩形"><a href="#矩形" class="headerlink" title="矩形"></a>矩形</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var draw = SVG(<span class="string">'drawing'</span>).size(300, 300);</span><br><span class="line">var rect = draw.rect(100, 100);</span><br><span class="line">//设置radius圆角,指定rx，ry</span><br><span class="line">//rect.radius(30,3);</span><br><span class="line">rect.radius(<span class="string">"50%"</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="圆形"><a href="#圆形" class="headerlink" title="圆形"></a>圆形</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var draw = SVG(<span class="string">'drawing'</span>).size(300, 300);</span><br><span class="line">draw.circle(100).fill(<span class="string">'red'</span>);</span><br><span class="line">//指定直径画圆</span><br><span class="line">var circle = draw.circle(100);</span><br><span class="line">//修改半径大小</span><br><span class="line">circle.radius(75);</span><br><span class="line">circle.move(50, 50)   //位移</span><br></pre></td></tr></table></figure>
 <h3 id="椭圆形"><a href="#椭圆形" class="headerlink" title="椭圆形"></a>椭圆形</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var draw = SVG(<span class="string">'drawing'</span>).size(300, 300);</span><br><span class="line">//指定width，height 画椭圆</span><br><span class="line">var ellipse = draw.ellipse(200, 100);</span><br><span class="line">//修改椭圆的半径</span><br><span class="line">setTimeout(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  ellipse.radius(75, 100);</span><br><span class="line">  ellipse.move(50, 50);</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure>
